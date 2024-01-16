@@ -29,9 +29,7 @@ class CardRepository
   {
     try {
       $connection = $this->databaseManager->connection;
-
       $tableName = 'jersey';
-
       $query = "SELECT * FROM $tableName";
       $statement = $connection->query($query);
 
@@ -40,14 +38,12 @@ class CardRepository
       // echo "</pre>";
 
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
       return $result;
 
     } catch (PDOException $e) {
       echo "Query failed: " . $e->getMessage();
       return [];
     }
-
     // We get the database connection first, so we can apply our queries with it
     // return $this->databaseManager->connection-> (runYourQueryHere)
   }
