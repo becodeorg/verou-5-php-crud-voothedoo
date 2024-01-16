@@ -32,11 +32,6 @@ class CardRepository
       $tableName = 'jersey';
       $query = "SELECT * FROM $tableName";
       $statement = $connection->query($query);
-
-      // echo "<pre>";
-      // print_r($statement);
-      // echo "</pre>";
-
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $result;
 
