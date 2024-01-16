@@ -21,6 +21,15 @@ $databaseManager->connect();
 $cardRepository = new CardRepository($databaseManager);
 $cards = $cardRepository->get();
 
+printR($cards);
+
+function printR($data)
+{
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+}
+
 // Get the current action to execute
 // If nothing is specified, it will remain empty (home should be loaded)
 $action = $_GET['action'] ?? null;
@@ -31,6 +40,12 @@ switch ($action) {
   case 'create':
     create();
     break;
+  case 'update':
+    update();
+    break;
+  case 'delete':
+    del();
+    break;
   default:
     overview();
     break;
@@ -40,10 +55,23 @@ function overview()
 {
   // Load your view
   // Tip: you can load this dynamically and based on a variable, if you want to load another view
+  global $cardRepository; // Assuming you have this global declaration
+  $cards = $cardRepository->get();
   require 'overview.php';
 }
+
 
 function create()
 {
   // TODO: provide the create logic
+}
+
+function update()
+{
+
+}
+
+function del()
+{
+
 }
