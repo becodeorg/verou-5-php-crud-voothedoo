@@ -6,23 +6,28 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hala Madrid!</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-
-<h1 class="text-4xl text-center">Los Blancos Boutique - A Real Madrid jersey collection.</h1>
-
-<ul>
-  <?php foreach ($cards as $card) : ?>
-    <li>Team: <?= $card['team'] ?></li>
-    <li>Season: <?= $card['season'] ?></li>
-    <li>Player: <?= $card['player'] ?></li>
-    <li>Size: <?= $card['size'] ?></li>
-    <li>Brand: <?= $card['brand'] ?></li>
-    <li>Condition: <?= $card['condition'] ?></li>
-    <br>
-  <?php endforeach; ?>
-</ul>
-
-</body> 
+<header>
+  <h1 class="title">Los Blancos Boutique</h1>
+  <p>A Real Madrid jersey collection.</p>
+</header>
+<main>
+    <?php foreach ($cards as $card) : ?>
+    <ul class="card Id<?= $card['id'] ?>">
+      <li><span>Team: </span><?= $card['team'] ?></li>
+      <li><span>Season: </span><?= $card['season'] ?></li>
+      <li><span>Player: </span><?= $card['player'] ?></li>
+      <li><span>Size: </span><?= $card['size'] ?></li>
+      <li><span>Brand: </span><?= $card['brand'] ?></li>
+      <li><span>Condition: </span><?= $card['condition'] ?></li>
+      <button class="editBtn">Edit Article</button>
+      <button class="deleteBtn">Delete</button>
+      <br>
+    </ul>
+    <?php endforeach; ?>
+</main>
+<footer></footer>
+</body>
 </html>

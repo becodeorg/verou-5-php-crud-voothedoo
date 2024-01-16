@@ -21,8 +21,6 @@ $databaseManager->connect();
 $cardRepository = new CardRepository($databaseManager);
 $cards = $cardRepository->get();
 
-printR($cards);
-
 function printR($data)
 {
     echo "<pre>";
@@ -55,7 +53,7 @@ function overview()
 {
   // Load your view
   // Tip: you can load this dynamically and based on a variable, if you want to load another view
-  global $cardRepository; // Assuming you have this global declaration
+  global $cardRepository; 
   $cards = $cardRepository->get();
   require 'overview.php';
 }

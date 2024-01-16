@@ -27,7 +27,7 @@ class DatabaseManager
     try {
       $this->connection = new PDO ("mysql:host={$this->host};dbname={$this->dbname}", $this->user, $this->password);
       $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      echo "Connected Succesfully!";
+      // echo "Connected Succesfully!";
     } catch (PDOException $e) {
       echo "Connection Failed: " . $e->getMessage();
     }
