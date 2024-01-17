@@ -13,36 +13,27 @@ class CardRepository
       $this->databaseManager = $databaseManager;
   }
 
-  public function sanitizeInput($input): string 
-  {
-    $input = trim($input);
-    $input = stripslashes($input);
-    $input = filter_var($input, FILTER_SANITIZE_STRING);
-
-    return $input;
-  }
-
-  public function sanitizeForOutput($input): string 
-  {
-    $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
-    return $input;
-  }
-
-  public function create(): void
+  public function create(string $team, int $season, string $player, string $size, string $brand, string $condition)
   {
     try {
       $connection = $this->databaseManager->connection;
+      $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $tableName = 'jersey';
-    } catch() {
-      echo 'hello';
+      $query = "INSERT INTO $tableName( team, season, player, size, brand, `condition` ) VALUES ( '$team', $season, '$player', '$size', '$brand', '$condition' )";
+      $connection->exec($query);
+
+      echo "New record created successfully";
+
+    } catch (PDOException $e) {
+      echo $query . "<br>" . $e->getMessage();
     }
   }
 
   // Get one
-  public function find(): array
-  {
+  // public function find(): array
+  // {
 
-  }
+  // }
 
   // Get all
   public function get(): array

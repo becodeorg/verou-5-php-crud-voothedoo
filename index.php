@@ -36,7 +36,7 @@ $action = $_GET['action'] ?? null;
 // This system will help you to only execute the code you want, instead of all of it (or complex if statements)
 switch ($action) {
   case 'create':
-    create();
+    create($cardRepository);
     break;
   case 'update':
     update();
@@ -59,9 +59,13 @@ function overview()
 }
 
 
-function create()
+function create($cardRepository)
 {
   // TODO: provide the create logic
+  if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $cardRepository->create($_POST['team'], (int)$_POST['season'],$_POST['player'],$_POST['size'],$_POST['brand'], $_POST['condition']);
+  }
+
   require 'create.php';
 }
 

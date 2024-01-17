@@ -21,6 +21,7 @@
     </div>
 </header>
 <main>
+  <form action=""> 
     <?php foreach ($cards as $card) : ?>
     <ul class="card Id<?= $card['id'] ?>">
       <li><span>Team: </span><?= $card['team'] ?></li>
@@ -33,6 +34,7 @@
       <button class="deleteBtn">Delete</button>
       <br>
     </ul>
+  </form>
     <?php endforeach; ?>
 </main>
 <footer></footer>
