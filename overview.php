@@ -11,7 +11,7 @@
 <body>
 <header>
   <div class="title">
-  <h1 class="title">Los Blancos Boutique</h1>
+  <h1 class="title">Los Blancos Boutique </h1>
   <p>A Real Madrid jersey collection.</p>
   </div>
     <div class="links">
@@ -21,8 +21,8 @@
     </div>
 </header>
 <main>
-  <form action=""> 
-    <?php foreach ($cards as $card) : ?>
+  <?php foreach ($cards as $card) : ?>
+  <form action="?action=delete" method="POST">
     <ul class="card Id<?= $card['id'] ?>">
       <li><span>Team: </span><?= $card['team'] ?></li>
       <li><span>Season: </span><?= $card['season'] ?></li>
@@ -31,7 +31,7 @@
       <li><span>Brand: </span><?= $card['brand'] ?></li>
       <li><span>Condition: </span><?= $card['condition'] ?></li>
       <button class="editBtn">Edit Article</button>
-      <button class="deleteBtn">Delete</button>
+      <button class="deleteBtn" name="deleteBtn" value=<?=$card['id']?> >Delete</button>
       <br>
     </ul>
   </form>

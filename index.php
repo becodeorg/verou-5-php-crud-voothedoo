@@ -24,7 +24,7 @@ $cards = $cardRepository->get();
 function printR($data)
 {
     echo "<pre>";
-    print_r($data);
+    var_dump($data);
     echo "</pre>";
 }
 
@@ -42,7 +42,7 @@ switch ($action) {
     update();
     break;
   case 'delete':
-    del();
+    del($cardRepository);
     break;
   default:
     overview();
@@ -74,7 +74,10 @@ function update()
 
 }
 
-function del()
+function del($cardRepository)
 {
-
+  if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $cardRepository->delete($_POST['deleteBtn']);
+  }
+  require 'overview.php';
 }

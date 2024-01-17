@@ -50,8 +50,6 @@ class CardRepository
       echo "Query failed: " . $e->getMessage();
       return [];
     }
-    // We get the database connection first, so we can apply our queries with it
-    // return $this->databaseManager->connection-> (runYourQueryHere)
   }
 
   public function update(): void
@@ -59,9 +57,19 @@ class CardRepository
 
   }
 
-  public function delete(): void
+  public function delete($deleteId): void
   {
-
+    try {
+      $connection = $this->databaseManager->connection;
+      $tableName = 'jersey';
+      $query = "DELETE FROM $tableName WHERE id = $deleteId";
+      $connection->exec($query);
+      echo "Deleted Succesfully!";
+      header("Location: ?", true, 301);
+    }catch (PDOException $e) {
+      echo "Query failed: " . $e->getMessage();
+    }
+    
   }
 
 }

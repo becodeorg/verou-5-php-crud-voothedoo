@@ -18,22 +18,22 @@
     <div>
       <form action="" method="POST">
         <label for="team">Team:</label>
-        <input type="text" name="team" id="team" autocomplete="off">
+        <input type="text" name="team" id="team" >
 
         <label for="season">Season:</label>
-        <input type="number" name="season" id="season" autocomplete="off">
+        <input type="number" name="season" id="season" >
 
         <label for="player">Player:</label>
-        <input type="text" name="player" id="player" autocomplete="off">
+        <input type="text" name="player" id="player" >
 
         <label for="size">Size:</label>
-        <input type="text" name="size" id="size" autocomplete="off">
+        <input type="text" name="size" id="size" >
 
         <label for="brand">Brand:</label>
-        <input type="text" name="brand" id="brand" autocomplete="off">
+        <input type="text" name="brand" id="brand" >
 
         <label for="condition">Condition:</label>
-        <input type="text" name="condition" id="condition" autocomplete="off">
+        <input type="text" name="condition" id="condition" >
 
         <button name="submitBtn" value="submit">Submit</button>
       </form>
