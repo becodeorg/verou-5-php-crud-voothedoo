@@ -62,6 +62,7 @@ function overview()
 function create()
 {
   // TODO: provide the create logic
+  require 'create.php';
 }
 
 function update()

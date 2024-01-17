@@ -12,14 +12,29 @@ body {
   max-width: 100vw;
 }
 body header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body header div.links {
+  margin-bottom: 2rem;
+}
+body header div.links ul li a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+body header div.title {
   text-align: center;
 }
-body header h1 {
+body header div.title h1 {
   color: #3e31fa;
   padding-top: 2rem;
   font-size: 4rem;
 }
-body header p {
+body header div.title p {
   margin-bottom: 3rem;
   font-size: 2rem;
   color: #3e31fa;

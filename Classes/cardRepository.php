@@ -13,9 +13,29 @@ class CardRepository
       $this->databaseManager = $databaseManager;
   }
 
+  public function sanitizeInput($input): string 
+  {
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = filter_var($input, FILTER_SANITIZE_STRING);
+
+    return $input;
+  }
+
+  public function sanitizeForOutput($input): string 
+  {
+    $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+    return $input;
+  }
+
   public function create(): void
   {
-
+    try {
+      $connection = $this->databaseManager->connection;
+      $tableName = 'jersey';
+    } catch() {
+      echo 'hello';
+    }
   }
 
   // Get one

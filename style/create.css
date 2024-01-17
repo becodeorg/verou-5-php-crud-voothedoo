@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body main {
+  width: 100vw;
+}
+body main div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+body main div form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  align-items: center;
+}/*# sourceMappingURL=create.css.map */

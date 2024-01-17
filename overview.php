@@ -10,8 +10,15 @@
 </head>
 <body>
 <header>
+  <div class="title">
   <h1 class="title">Los Blancos Boutique</h1>
   <p>A Real Madrid jersey collection.</p>
+  </div>
+    <div class="links">
+      <ul>
+        <li><a href="?action=create">Add an item</a></li>
+      </ul>
+    </div>
 </header>
 <main>
     <?php foreach ($cards as $card) : ?>
